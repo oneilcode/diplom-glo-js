@@ -1,3 +1,3 @@
-import test from './modules/test';
+import scrollMenu from './modules/scrollMenu';
 
-test();
+scrollMenu();
