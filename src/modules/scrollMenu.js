@@ -2,8 +2,6 @@ const scrollMenu = () => {
    const topMenu = document.querySelector('.top-menu');
    const menuItems = topMenu.querySelectorAll('ul>li>a');
 
-   console.log(topMenu);
-
    menuItems.forEach(item => {
       item.addEventListener('click', (event) => {
          event.preventDefault();
