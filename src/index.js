@@ -3,9 +3,11 @@ import openModal from './modules/openModal';
 import closeModal from './modules/closeModal';
 import scrollBtn from './modules/scrollBtn';
 import serviceModal from './modules/serviceModal';
+import accordeon from './modules/accordeon';
 
 scrollMenu();
 openModal();
 closeModal();
 scrollBtn();
 serviceModal();
+accordeon();
