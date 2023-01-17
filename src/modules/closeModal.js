@@ -4,15 +4,13 @@ const closeModal = () => {
    const overlay = document.querySelector('.modal-overlay');
    const closeBtn = document.querySelector('.modal-close');
 
-   closeBtn.addEventListener('click', (e) => {
+   function closeModal() {
       modal.style.display = 'none';
       overlay.style.display = 'none';
-   });
+   }
 
-   overlay.addEventListener('click', (e) => {
-      modal.style.display = 'none';
-      overlay.style.display = 'none';
-   });
+   overlay.addEventListener('click', closeModal);
+   closeBtn.addEventListener('click', closeModal);
 };
 
 export default closeModal;
