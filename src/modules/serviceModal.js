@@ -3,6 +3,15 @@ const serviceModal = () => {
    const modal = document.querySelector('.modal-callback');
    const overlay = document.querySelector('.modal-overlay');
    const closeBtn = document.querySelector('.modal-close');
+   const slideBtn = document.querySelectorAll('.fancyboxModal');
+
+   //модальное окно по кнопке Оформить заказ
+   slideBtn.forEach((item) => {
+      item.addEventListener('click', function () {
+         modal.style.display = 'block';
+         overlay.style.display = 'block';
+      });
+   });
 
    btnService.addEventListener('click', function () {
       modal.style.display = 'block';
