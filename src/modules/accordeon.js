@@ -1,39 +1,23 @@
 const accordeon = () => {
-   let titles = document.querySelectorAll('.title');
-   let elements = document.querySelectorAll('.element');
+   const elements = document.querySelectorAll('.element');
 
+   elements.forEach(el => {
+      el.addEventListener('click', (e) => {
 
-   titles.forEach((elem) => {
-      elem.addEventListener('click', function () {
-         /*находим все активные элементы*/
-         let contentActive = document.querySelectorAll('.element-content.active');
-         let elementActive = document.querySelectorAll('.element.active');
-         /*прогоняем через цикл и удаляем класс active*/
-         contentActive.forEach((elem) => {
-            elem.classList.remove('active');
-         });
+         const self = e.currentTarget;
+         const content = self.querySelector('.element-content');
 
-         elementActive.forEach((elem) => {
-            elem.classList.remove('active');
-         });
+         self.classList.toggle('active');
 
+         if (self.classList.contains('active')) {
 
-         let parentElem = this.parentNode;
-
-         let contentBlock = parentElem.querySelector('.element-content');
-         let elementBlock = parentElem.querySelector('.element');
-
-         if (contentBlock.classList.contains("active")) {
-            contentBlock.classList.remove('active');
+            content.style.display = 'block';
          } else {
-            contentBlock.classList.add('active');
-
+            content.style.display = 'none';
+            el.classList.remove('active');
          }
-
-
       });
    });
-
 };
 
 export default accordeon;

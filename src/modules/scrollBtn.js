@@ -2,14 +2,14 @@ const scrollBtn = () => {
    const btn = document.querySelector('.up');
    const header = document.querySelector('.top-slider');
 
-   btn.style.oppacity = '0';
+   btn.style.visibility = 'hidden';
    btn.style.transition = 'all .3s ease-in-out';
 
    function magic() {
       if (window.pageYOffset > 700) {
-         btn.style.opacity = '1';
+         btn.style.visibility = 'visible';
       } else {
-         btn.style.opacity = '0';
+         btn.style.visibility = 'hidden';
       }
    }
 
