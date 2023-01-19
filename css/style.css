@@ -938,8 +938,8 @@ video#video_background {
     height: 520px;
   }
   .top-slider .table {
-    opacity: 0;
-    visibility: hidden;
+    /* opacity: 0; */
+    /* visibility: hidden; */
     -webkit-transform: scale(1.5);
     -ms-transform: scale(1.5);
     -o-transform: scale(1.5);
@@ -1242,3 +1242,11 @@ video#video_background {
   }
 }
 /**** /. services section *****/
+.swiper-pagination-bullet {
+  border: 1px solid #fff;
+  width: 10px;
+  height: 10px;
+}
+.swiper-pagination-bullet-active {
+  background: #fff;
+}

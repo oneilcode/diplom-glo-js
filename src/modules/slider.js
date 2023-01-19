@@ -1,5 +1,5 @@
 const slider = () => {
-   var swiper = new Swiper(".mySwiper", {
+   const swiper = new Swiper(".mySwiper", {
       slidesPerView: 1,
       spaceBetween: 30,
       loop: true,
@@ -14,6 +14,20 @@ const slider = () => {
          1200: {
             slidesPerView: 3,
          },
+      },
+   });
+
+   const swiperTop = new Swiper(".swiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+         delay: 3000,
+         disableOnInteraction: false,
+      },
+      pagination: {
+         el: ".swiper-pagination",
+         clickable: true,
       },
    });
 };
