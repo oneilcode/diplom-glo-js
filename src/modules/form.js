@@ -9,7 +9,7 @@ const form = () => {
    const name = form.querySelector('input[name=fio]');
    const phone = form.querySelector('input[name=tel]');
 
-   console.log('djfhdjfh');
+   const submit = form.querySelector('.button');
 
    const sendData = (data) => {
       return fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -24,21 +24,23 @@ const form = () => {
    const validate = (list) => {
       let success = true;
 
-
       if (name.value.length === 0) {
          success = false;
          // Имя должно содержать не менее 1 символа!
          statusBlock.textContent = errorText;
+         submit.value = 'Отправить';
       }
 
       if (phone.value.match(/[^0-9\+]/g, '')) {
          success = false;
          // Номер телефона не должен содержать данные символы
          statusBlock.textContent = errorText;
+         submit.value = 'Отправить';
       } else if (phone.value.length < 11) {
          success = false;
          // Номер телефона должен содержать не менее 11 цифр!;
          statusBlock.textContent = errorText;
+         submit.value = 'Отправить';
       }
 
       return success;
@@ -51,6 +53,7 @@ const form = () => {
 
       statusBlock.textContent = loadText;
       form.append(statusBlock);
+      submit.value = 'Отправить';
 
       formData.forEach((val, key) => {
          formBody[key] = val;
@@ -61,16 +64,19 @@ const form = () => {
          sendData(formBody)
             .then(data => {
                statusBlock.textContent = successText;
+               submit.value = 'Отправить';
                setTimeout(() => {
                   statusBlock.textContent = '';
                }, 3000);
 
                formElements.forEach(input => {
                   input.value = '';
+                  submit.value = 'Отправить';
                });
             })
             .catch(error => {
                statusBlock.textContent = errorText;
+               submit.value = 'Отправить';
             });
 
       } else {
