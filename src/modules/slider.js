@@ -4,8 +4,8 @@ const slider = () => {
       spaceBetween: 30,
       loop: true,
       navigation: {
-         nextEl: ".arrow-left",
-         prevEl: ".arrow-right",
+         nextEl: ".arrow-right",
+         prevEl: ".arrow-left",
       },
       breakpoints: {
          768: {

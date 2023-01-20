@@ -79,8 +79,6 @@ const form = () => {
                submit.value = 'Отправить';
             });
 
-      } else {
-         alert('данные не валидны');
       }
    };
 
